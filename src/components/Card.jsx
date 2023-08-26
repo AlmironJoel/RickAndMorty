@@ -6,8 +6,8 @@ export default function Card(props) {
    const {onClose} = props
    return (
       <div>
-          <button onClick={()=>onClose(character.id)}>X</button>
          
+         <button onClick={()=>onClose(character.id)}>X</button>         
          <Link to={`/detail/${character.id}`}>
          <h2>Name:{character.name} </h2>
          </Link>
