@@ -11,13 +11,9 @@ import './App.css';
 
 
 const email = "pepito@hotmail.com"
-const password = 'asd12345'
+const password = '123456a'
 
 function App() {
-   /* Las funciones nos van dentro del return, sino que se crean fuera y se hacen llamar*/
-   function closeHandle (){//*Emulamos que se cierra la card
-      window.alert('Emulamos que se cierra la card')
-   }
    const location = useLocation()
    const navegate = useNavigate()
    const [characters,setCharacters] = useState([])
@@ -64,3 +60,7 @@ function App() {
 }
 
 export default App;
+// //  /* Las funciones nos van dentro del return, sino que se crean fuera y se hacen llamar*/
+// function closeHandle (){//*Emulamos que se cierra la card
+//    window.alert('Emulamos que se cierra la card')
+// }
