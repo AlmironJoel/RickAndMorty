@@ -17,6 +17,7 @@ const SearchBar = ({onSearch})=> {
         onSearch(id);
       }}
     >Agregar</button>
+    
       </div>
    );
 }

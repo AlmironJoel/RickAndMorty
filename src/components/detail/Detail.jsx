@@ -1,6 +1,7 @@
 import axios from "axios"
 import { useParams } from "react-router-dom"
 import { useState,useEffect } from "react"
+import { Link } from "react-router-dom"
 
 const Detail = ()=>{
     const {id} =  useParams()
@@ -30,6 +31,9 @@ const Detail = ()=>{
             <h2>{character?.gender}</h2>
             <h2>{character?.origin?.name}</h2>
             <img src={character?.image} alt={character?.name} />
+            <button>
+                <Link to='/home'>Cerrar Carta</Link>
+            </button>
         </div>
     )
 }

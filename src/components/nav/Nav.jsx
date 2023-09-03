@@ -1,11 +1,14 @@
-import SearchBar from "./SearchBar";
+import SearchBar from "../searchBar/SearchBar";
 import { Link } from "react-router-dom";
 
-const Nav = ({onSearch}) => {
+const Nav = ({onSearch,randomize}) => {
     return (
         <>
         <nav>
         <SearchBar onSearch={onSearch} />
+
+        <button onClick={randomize}>Carta Random</button>
+        
         <button>
             <Link to= "/about">About</Link>
         </button>
@@ -15,6 +18,7 @@ const Nav = ({onSearch}) => {
         <button>
             <Link to={"/favorites"} >Favorites</Link>
         </button>
+        
         </nav>
         </>
     )
