@@ -14,21 +14,26 @@ import './App.scss';
 const email = "pepito@hotmail.com"
 const password = '123456a'
 
+
 function App() {
    const location = useLocation()
-   const navegate = useNavigate()
+   const navigate = useNavigate()
    const [characters,setCharacters] = useState([])
    const[access,setAccess]=useState(false) 
 
-   const login=(userData)=>{
-      if(userData.email === email && userData.password === password){
-         setAccess(true);
-         navegate('/home');//si todo da true me redirige a home
-      }
+  const login = (userData) => {
+      const { email, password } = userData;
+      const URL = 'http://localhost:3001/rickandmorty/login/';
+      axios(URL + `?email=${email}&password=${password}`)
+         .then(({ data }) => {
+            const { access } = data;
+            setAccess(access);
+             access && navigate('/home');
+       });
    }
 
    useEffect(()=>{
-      !access&&navegate('/')
+      !access&&navigate('/')
    },[access])
 
    const onSearch = (id)=> {
