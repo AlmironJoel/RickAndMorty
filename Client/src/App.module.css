@@ -1,0 +1,8 @@
+.videoBackground {
+   display: flex;
+   height: 100vh;
+   background: url("./img/imagenrick.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: top;
+}

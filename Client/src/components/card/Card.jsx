@@ -3,6 +3,8 @@ import { addFav, removeFav } from "../../redux/action"
 import { connect } from "react-redux";
 import { useState, useEffect } from "react";
 
+import style from './Card.module.css'
+
 function Card({ id, name, status, species, gender, origin, image, onClose, addFav, removeFav, myFavorites}) {
 
    const [isFav, setIsFav] = useState(false);
@@ -26,7 +28,7 @@ function Card({ id, name, status, species, gender, origin, image, onClose, addFa
    }, [myFavorites]);
    
    return (
-      <div>
+      <div className={style.container}>
          <button onClick={handleFavorite}>{isFav ? "❤️" : "🤍"}</button>
          <button onClick={() => {onClose(id)}}>X</button>
          <Link to={`/detail/${id}`}>
